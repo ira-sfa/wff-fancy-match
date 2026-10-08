@@ -232,7 +232,7 @@
     var link = document.createElement("button");
     link.type = "button";
     link.className = "find-link";
-    link.textContent = "Learn more ↗";
+    link.textContent = "Learn more";
     link.addEventListener("click", function () {
       window.FancyAnalytics.record("exhibitor_clicked", {
         mode: activeGame ? activeGame.mode : selectedMode,

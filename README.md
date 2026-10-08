@@ -1,6 +1,6 @@
 # Winter Fancy Match
 
-A mobile-first, sponsor-friendly memory game created for Winter FancyFaire. Players match exhibitor wordmarks, discover a brand profile after each match, and keep their best score on their own device. The site is plain HTML, CSS, and vanilla JavaScript; it has no build step, server, or framework and can be hosted as a static GitHub Pages site.
+A mobile-first, sponsor-friendly memory game created for Winter FancyFaire*. Players match exhibitor wordmarks, discover a brand profile after each match, and keep their best score on their own device. The site is plain HTML, CSS, and vanilla JavaScript; it has no build step, server, or framework and can be hosted as a static GitHub Pages site.
 
 > **Demo content:** Exhibitor names and wordmarks are fictional samples generated in `data/exhibitors.js`. Replace them with approved exhibitor details and logo assets before publishing the activation.
 

@@ -101,8 +101,8 @@
       var front = document.createElement("span");
       front.className = "card-face card-front";
       var logo = document.createElement("img");
-      logo.src = card.exhibitor.logo;
-      logo.alt = card.exhibitor.companyName + " logo";
+      logo.src = card.exhibitor.productImage || card.exhibitor.logo;
+      logo.alt = card.exhibitor.productName + " by " + card.exhibitor.companyName;
       front.appendChild(logo);
       var back = document.createElement("span");
       back.className = "card-face card-back";
@@ -226,12 +226,15 @@
     card.className = "find-card";
     var logo = document.createElement("img");
     logo.className = "find-logo";
-    logo.src = exhibitor.logo;
-    logo.alt = exhibitor.companyName + " logo";
+    logo.src = exhibitor.productImage || exhibitor.logo;
+    logo.alt = exhibitor.productName + " by " + exhibitor.companyName;
     var details = document.createElement("div");
     details.className = "find-details";
     var company = document.createElement("h4");
     company.textContent = exhibitor.companyName;
+    var product = document.createElement("p");
+    product.className = "find-product";
+    product.textContent = exhibitor.productName;
     var metadata = document.createElement("p");
     metadata.textContent = "BOOTH " + exhibitor.boothNumber + " · " + exhibitor.category;
     var sponsor = document.createElement("span");
@@ -250,6 +253,7 @@
       window.open(exhibitor.profileUrl, "_blank", "noopener,noreferrer");
     });
     details.appendChild(company);
+    details.appendChild(product);
     details.appendChild(metadata);
     details.appendChild(sponsor);
     card.appendChild(logo);

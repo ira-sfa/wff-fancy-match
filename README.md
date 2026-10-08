@@ -1,8 +1,8 @@
 # Winter Fancy Match
 
-A mobile-first, sponsor-friendly memory game created for Winter FancyFaire*. Players match exhibitor wordmarks, discover a brand profile after each match, and keep their best score on their own device. The site is plain HTML, CSS, and vanilla JavaScript; it has no build step, server, or framework and can be hosted as a static GitHub Pages site.
+A mobile-first, sponsor-friendly memory game created for Winter FancyFaire*. Players match specialty-food products, discover the exhibitor and booth after a match, and keep their best score on their own device. The site is plain HTML, CSS, and vanilla JavaScript; it has no build step, server, or framework and can be hosted as a static GitHub Pages site.
 
-> **Demo content:** Exhibitor names and wordmarks are fictional samples generated in `data/exhibitors.js`. Replace them with approved exhibitor details and logo assets before publishing the activation.
+> **Demo content:** Exhibitor names and wordmarks are fictional samples. The matching cards feature original product-package mockups generated in `data/exhibitors.js` and the supplied sample Galactic Granola product photograph. These are demo artwork, not actual exhibitor products. Replace them with approved exhibitor details and product photography before promoting a live activation.
 
 ## Screenshots
 
@@ -46,19 +46,20 @@ Then open `http://localhost:8000`. The hidden dashboard is available at `/admin/
 
 Keep `index.html` at the repository root and retain the provided relative asset paths so the game works both at a project-site URL and locally. GitHub Pages deployment can take a few minutes after the first save.
 
-## Replace demo exhibitors and logos
+## Replace demo exhibitors and product images
 
-1. Get permission to use each exhibitor's approved logo and profile link. Use a web-ready SVG or transparent PNG; avoid artwork that is only available inside a design application file. Add approved image files under `assets/logos/`, for example `assets/logos/acme-foods.svg`.
-2. Edit `data/exhibitors.js`. Each entry contains the required fields: `companyName`, `logo`, `boothNumber`, `category`, `profileUrl`, and `sponsorLevel` (it also has an `id` used to match analytics). Point `logo` at the new local asset, e.g. `logo: "assets/logos/acme-foods.svg"`, and replace the sample profile URL with the exhibitor's approved public profile URL. Remove or replace every sample record.
-3. To remove the generated sample wordmarks, replace the `logo` value for each record with its asset path. The `makeDemoLogo` helper near the top of `data/exhibitors.js` is only used to create the fictional demo wordmarks.
-4. Keep every `id` unique and stable, and provide at least **18 exhibitors** so Hard mode can deal 18 different pairs. Confirm every logo path and external profile URL before deployment. Add real names, booths, categories, and sponsor levels so the match reveals and dashboard tables are accurate.
-5. Open the site and play through each difficulty. Check logo contrast on the card face, the exhibitor reveal details, the Learn More destination, and the dashboard. Then commit the approved asset files and data updates.
+1. Get permission to use each exhibitor's product photography, brand name, and public profile link. Choose a well-lit, web-ready product pack shot (transparent PNG/WebP or square JPEG) with its packaging easy to recognize. Add approved product photos under `assets/products/`, such as `assets/products/acme-sea-salt-chips.jpg`.
+2. Edit `data/exhibitors.js`. Each entry includes `companyName`, `logo`, `boothNumber`, `category`, `profileUrl`, and `sponsorLevel`, as well as `productName`, `productImage`, and a stable analytics `id`. Set `productName` to the featured item and `productImage` to its local image path, e.g. `productImage: "assets/products/acme-sea-salt-chips.jpg"`. Replace the sample profile URL with the exhibitor's approved public profile.
+3. Replace the fictional company names, package mockups, and sample product images before publishing. The memory cards and matched-brand cards use `productImage`; matches reveal the exhibitor name, featured product, booth, category, sponsor level, and Learn More link. The `logo` field is available for the exhibitor's approved company mark; it is separate from the product image.
+4. Keep every `id` unique and stable and provide at least **18 exhibitors** so Hard mode can deal 18 different pairs. Verify each product image, company, booth, sponsor level, and profile URL.
+5. Play each difficulty. Check that the product packaging is recognizable at card size, each match reveals the correct exhibitor and booth, and Learn More opens the correct profile. Review the dashboard, then commit the approved assets and data.
 
-The supplied Reti Yeti waving artwork is included at `assets/brand/reti-yeti-waving.png` and displayed on the welcome screen. The approved white Specialty Food Association wordmark from the supplied artwork is included at `assets/brand/sfa-logo-white.png`; it is displayed without alteration against the game's dark brand background in the header, dashboard, and card backs. The `assets/logos/` directory is where approved exhibitor logo files can be added.
+The supplied Reti Yeti waving artwork is included at `assets/brand/reti-yeti-waving.png` and displayed on the welcome screen. The approved white Specialty Food Association wordmark from the supplied artwork is at `assets/brand/sfa-logo-white.png`; it is shown unaltered against the game's dark background in the header, dashboard, and card backs. The supplied Galactic Granola image is included at `assets/products/galactic-granola-clusters.png`. Other product-package mockups are original sample art, not actual exhibitor products. Product categories take inspiration from the variety on the [2026 Summer Fancy Food Show products page](https://events.specialtyfood.com/event/2026-summer-fancy-food-show/products/RXZlbnRWaWV3XzEyNTgzMTU=); its exhibitors' photographs are not reused. Add approved company marks under `assets/logos/` and product photos under `assets/products/`.
 
 ## Gameplay and stored data
 
 - **Easy:** 4 × 4 grid, 8 pairs. **Medium:** 5 × 4 grid, 10 pairs. **Hard:** 6 × 6 grid, 18 pairs.
+- Cards feature a specialty-food product. Matching it reveals its demo exhibitor, featured product, booth, category, sponsor level, and profile link.
 - Best score, sound preference, a random local player ID, visit status, and event records are held in local storage in the visitor's browser.
 - The game records `first_visit`, `returning_visit`, `game_started`, `card_flipped`, `match_found`, `game_completed`, and `exhibitor_clicked` events. Nothing is sent to an analytics server.
 - The dashboard generates sample/demo activity when it opens, then adds events available in that browser. It is a preview tool, not an authenticated administration system or a shared multi-visitor reporting service. A static GitHub Pages site cannot protect a hidden page or aggregate visitors' local storage; connect a properly secured analytics service if production-wide reporting or access control is required.
@@ -75,6 +76,7 @@ The supplied Reti Yeti waving artwork is included at `assets/brand/reti-yeti-wav
 ├── js/analytics.js
 ├── data/exhibitors.js
 ├── assets/brand/reti-yeti-waving.png
+├── assets/products/
 ├── assets/logos/
 ├── admin/dashboard.html
 ├── admin/dashboard.js

@@ -147,8 +147,8 @@ h1 em, h2 em { color: #65498a; font-weight: 600; }
 .card-inner { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform .47s cubic-bezier(.2,.8,.22,1); }
 .memory-card.is-flipped .card-inner, .memory-card.is-matched .card-inner { transform: rotateY(180deg); }
 .card-face { position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden; border: 1px solid #e1dce7; border-radius: 4px; backface-visibility: hidden; }
-.card-front { transform: rotateY(180deg); background: white; }
-.card-front img { width: 89%; height: 83%; object-fit: contain; }
+.card-front { transform: rotateY(180deg); background: #282438; }
+.card-front img { width: 100%; height: 100%; object-fit: cover; }
 .card-back { background: linear-gradient(142deg, #44335e, #5d4776); color: #e3d9ed; }
 .card-back::before, .card-back::after { position: absolute; width: 68%; height: 68%; border: 1px solid rgba(241,235,247,.16); border-radius: 50%; content: ""; }
 .card-back::after { width: 47%; height: 47%; }
@@ -171,9 +171,10 @@ h1 em, h2 em { color: #65498a; font-weight: 600; }
 .finds-list { display: grid; gap: 12px; margin-top: 15px; }
 .find-card { padding-top: 13px; border-top: 1px solid #eeeaf0; animation: find-in .35s ease; }
 @keyframes find-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-.find-logo { display: block; width: 100%; height: 84px; padding: 5px; border: 1px solid #f0edf2; object-fit: contain; }
+.find-logo { display: block; width: 100%; height: 112px; border: 1px solid #f0edf2; background: #282438; object-fit: cover; }
 .find-details h4 { margin: 9px 0 4px; font-family: var(--serif); font-size: 15px; font-weight: 600; }
 .find-details p { margin: 0; color: #887f90; font-size: 8px; line-height: 1.6; }
+.find-details .find-product { margin: 0 0 4px; color: #5e536b; font-size: 9px; font-weight: 600; }
 .sponsor-pill { display: inline-block; margin-top: 7px; color: #887198; font-size: 7px; font-weight: 700; letter-spacing: .12em; }
 .find-link { display: block; margin-top: 10px; padding: 0; border: 0; background: transparent; color: #5f477d; cursor: pointer; font-size: 9px; font-weight: 700; }
 .find-link:hover { text-decoration: underline; }
@@ -268,12 +269,12 @@ h1 em, h2 em { color: #65498a; font-weight: 600; }
   .game-layout { grid-template-columns: 1fr; gap: 22px; }
   .game-board { gap: 6px; }
   .memory-card { aspect-ratio: 1.08 / 1; }
-  .card-front img { width: 94%; height: 88%; }
+  .card-front img { width: 100%; height: 100%; object-fit: cover; }
   .card-back-snow { font-size: 7px; }
   .finds-panel { min-height: 0; padding: 16px; }
   .finds-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .find-card { min-width: 0; }
-  .find-logo { height: 68px; }
+  .find-logo { height: 100px; }
   .find-details h4 { font-size: 13px; }
   .find-details p { font-size: 7px; }
   .closing-note { padding: 37px 15px; }

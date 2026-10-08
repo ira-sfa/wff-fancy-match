@@ -54,7 +54,7 @@ Keep `index.html` at the repository root and retain the provided relative asset 
 4. Keep every `id` unique and stable, and provide at least **18 exhibitors** so Hard mode can deal 18 different pairs. Confirm every logo path and external profile URL before deployment. Add real names, booths, categories, and sponsor levels so the match reveals and dashboard tables are accurate.
 5. Open the site and play through each difficulty. Check logo contrast on the card face, the exhibitor reveal details, the Learn More destination, and the dashboard. Then commit the approved asset files and data updates.
 
-The supplied Reti Yeti waving artwork is included at `assets/brand/reti-yeti-waving.png` and displayed on the welcome screen. The `assets/logos/` directory is where approved exhibitor logo files can be added.
+The supplied Reti Yeti waving artwork is included at `assets/brand/reti-yeti-waving.png` and displayed on the welcome screen. The approved white Specialty Food Association wordmark from the supplied artwork is included at `assets/brand/sfa-logo-white.png`; it is displayed without alteration against the game's dark brand background in the header, dashboard, and card backs. The `assets/logos/` directory is where approved exhibitor logo files can be added.
 
 ## Gameplay and stored data
 

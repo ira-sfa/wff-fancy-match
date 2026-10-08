@@ -15,7 +15,7 @@ a { color: inherit; }
 .dashboard-shell { min-height: 100vh; }
 .dashboard-header { display: flex; align-items: center; justify-content: space-between; min-height: 76px; padding: 0 clamp(20px, 5vw, 78px); background: var(--deep); color: white; }
 .dash-brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
-.dash-monogram { display: grid; width: 37px; height: 37px; place-items: center; border: 1px solid rgba(255,255,255,.48); border-radius: 50%; color: #ebdff5; font-family: var(--serif); font-size: 22px; }
+.dash-logo { display: block; flex: 0 0 auto; width: 49px; height: auto; object-fit: contain; }
 .dash-brand strong, .dash-brand small { display: block; }
 .dash-brand strong { font-size: 12px; font-weight: 600; }
 .brand-asterisk { display: inline-block; margin-left: 1px; color: #d9c2ec; font-family: var(--serif); font-size: .78em; line-height: 0; vertical-align: .5em; }
@@ -71,7 +71,7 @@ td:first-child { color: #332740; font-family: var(--serif); font-size: 12px; }
 }
 @media (max-width: 650px) {
   .dashboard-header { min-height: 65px; padding: 0 16px; }
-  .dash-monogram { width: 32px; height: 32px; font-size: 19px; }
+  .dash-logo { width: 42px; }
   .dash-brand strong { font-size: 10px; }
   .dash-brand small { font-size: 6px; }
   .header-right { gap: 10px; }

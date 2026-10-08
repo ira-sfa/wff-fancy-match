@@ -37,10 +37,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #99cfe6; outline-offs
   background: var(--purple-deep); color: var(--white);
 }
 .brand-lockup { display: inline-flex; align-items: center; gap: 11px; color: inherit; text-decoration: none; }
-.brand-mark {
-  display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid rgba(235,223,250,.56);
-  border-radius: 50%; color: #e9d7f4; font-family: var(--serif); font-size: 23px; font-weight: 700;
-}
+.sfa-logo { display: block; flex: 0 0 auto; width: 51px; height: auto; object-fit: contain; }
 .brand-copy { display: grid; gap: 3px; }
 .brand-copy strong { font-size: 13px; font-weight: 600; letter-spacing: .015em; }
 .brand-asterisk { display: inline-block; margin-left: 1px; color: #d9c2ec; font-family: var(--serif); font-size: .78em; line-height: 0; vertical-align: .5em; }
@@ -155,7 +152,7 @@ h1 em, h2 em { color: #65498a; font-weight: 600; }
 .card-back { background: linear-gradient(142deg, #44335e, #5d4776); color: #e3d9ed; }
 .card-back::before, .card-back::after { position: absolute; width: 68%; height: 68%; border: 1px solid rgba(241,235,247,.16); border-radius: 50%; content: ""; }
 .card-back::after { width: 47%; height: 47%; }
-.card-back-mark { position: relative; z-index: 1; font-family: var(--serif); font-size: clamp(20px, 3vw, 36px); font-weight: 700; }
+.card-back-logo { position: relative; z-index: 1; display: block; width: 72%; height: auto; object-fit: contain; }
 .card-back-snow { position: absolute; z-index: 1; right: 12%; bottom: 10%; color: #c7b7dc; font-size: 9px; }
 .memory-card.is-matched .card-face { border-color: #9bbcae; box-shadow: 0 0 0 2px rgba(123,170,148,.27); }
 .memory-card.is-matched { animation: match-pop .42s ease; }
@@ -226,7 +223,7 @@ h1 em, h2 em { color: #65498a; font-weight: 600; }
 }
 @media (max-width: 650px) {
   .site-header { min-height: 68px; padding: 0 19px; }
-  .brand-mark { width: 33px; height: 33px; }
+  .sfa-logo { width: 44px; }
   .brand-copy strong { font-size: 11px; }
   .brand-copy small { font-size: 7px; }
   .top-nav { gap: 12px; }

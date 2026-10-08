@@ -107,7 +107,15 @@
       var back = document.createElement("span");
       back.className = "card-face card-back";
       back.setAttribute("aria-hidden", "true");
-      back.innerHTML = '<span class="card-back-mark">F</span><span class="card-back-snow" aria-hidden="true">✳</span>';
+      var backLogo = document.createElement("img");
+      backLogo.className = "card-back-logo";
+      backLogo.src = "assets/brand/sfa-logo-white.png";
+      backLogo.alt = "";
+      var backSnow = document.createElement("span");
+      backSnow.className = "card-back-snow";
+      backSnow.textContent = "✳";
+      back.appendChild(backLogo);
+      back.appendChild(backSnow);
       inner.appendChild(front);
       inner.appendChild(back);
       button.appendChild(inner);

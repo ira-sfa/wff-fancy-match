@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#201938">
+  <meta name="description" content="Play Winter Fancy Match, a winter memory game celebrating specialty food brands and Fancy Finds.">
+  <title>Winter Fancy Match | Winter FancyFaire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="data/exhibitors.js"></script>
+  <script defer src="js/analytics.js"></script>
+  <script defer src="js/game.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand-lockup" href="#home" aria-label="Winter FancyFaire home">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span class="brand-copy"><strong>Winter FancyFaire</strong><small>SPECIALTY FOOD ASSOCIATION</small></span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#home">The game</a>
+        <button class="nav-link" type="button" data-open-dialog="how-dialog">How to play</button>
+        <button class="nav-link" type="button" data-open-dialog="leaderboard-dialog">Leaderboard</button>
+      </nav>
+      <a class="header-cta" href="#play" id="header-play">Play now <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="home">
+      <section class="hero" id="home-screen" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-star" aria-hidden="true">✳</span> A WINTER FANCYFAIRE EXPERIENCE</div>
+          <h1 id="hero-title">Winter<br><em>Fancy Match</em></h1>
+          <p class="hero-subtitle">Match specialty food brands and discover your next Fancy Find.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" id="play-button" type="button">Play game <span aria-hidden="true">→</span></button>
+            <button class="button button-quiet" type="button" data-open-dialog="how-dialog">How to play <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="hero-footnote"><span class="sparkle" aria-hidden="true">✦</span> Find your favorites, one pair at a time.</div>
+        </div>
+        <div class="hero-art" aria-label="Reti Yeti is ready to play">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="snow-dot snow-dot-one"></div><div class="snow-dot snow-dot-two"></div><div class="snow-dot snow-dot-three"></div>
+          <div class="art-caption"><span class="caption-icon" aria-hidden="true">✦</span><span><strong>A little play.</strong><small>A lot of Fancy Finds.</small></span></div>
+          <img class="yeti-art" src="assets/brand/reti-yeti-waving.png" alt="Reti Yeti waving hello">
+          <div class="art-sticker">MEET<br>YOUR NEXT<br>FANCY FIND</div>
+          <div class="art-bottom-note">GOOD THINGS<br>ARE WORTH<br>DISCOVERING <span aria-hidden="true">↗</span></div>
+        </div>
+        <div class="hero-rule"><span>01</span><span class="rule-line"></span><span>DISCOVER SOMETHING DELICIOUS</span></div>
+      </section>
+
+      <section class="game-section" id="play" aria-labelledby="play-title">
+        <div class="section-heading">
+          <div><div class="eyebrow"><span class="eyebrow-star" aria-hidden="true">✳</span> YOUR NEXT FANCY FIND STARTS HERE</div><h2 id="play-title">Ready when <em>you are.</em></h2></div>
+          <p>Pick your pace. Find the pairs.<br>Meet the makers behind the good stuff.</p>
+        </div>
+        <div class="mode-picker" role="group" aria-label="Choose a difficulty">
+          <button class="mode-card" type="button" data-mode="easy" aria-pressed="false">
+            <span class="mode-number">01 / EASY</span><span class="mode-name">A little chill</span><span class="mode-detail">4 × 4 <span>8 pairs</span></span>
+          </button>
+          <button class="mode-card is-selected" type="button" data-mode="medium" aria-pressed="true">
+            <span class="mode-number">02 / MEDIUM</span><span class="mode-name">Just right</span><span class="mode-detail">5 × 4 <span>10 pairs</span></span>
+          </button>
+          <button class="mode-card" type="button" data-mode="hard" aria-pressed="false">
+            <span class="mode-number">03 / HARD</span><span class="mode-name">Bring the heat</span><span class="mode-detail">6 × 6 <span>18 pairs</span></span>
+          </button>
+        </div>
+        <div class="section-action-row">
+          <button class="button button-primary" id="play-button-secondary" type="button">Let’s play <span aria-hidden="true">→</span></button>
+          <span class="best-score-note" id="home-best-score">Your best: —</span>
+        </div>
+      </section>
+
+      <section class="game-screen" id="game-screen" hidden aria-labelledby="game-title">
+        <div class="game-topline"><button class="back-link" id="back-home" type="button"><span aria-hidden="true">←</span> Back to FancyFaire</button><button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false"><span aria-hidden="true">♫</span> Sound off</button></div>
+        <div class="game-heading"><div><div class="eyebrow"><span class="eyebrow-star" aria-hidden="true">✳</span> <span id="game-mode-label">MEDIUM MODE</span></div><h2 id="game-title">Find the <em>Fancy Finds.</em></h2></div><p>Find every matching pair to meet<br>the makers behind the brands.</p></div>
+        <div class="game-stats" aria-label="Game stats">
+          <div class="stat-item"><span class="stat-label">TIME</span><strong id="timer">00:00</strong></div>
+          <div class="stat-item"><span class="stat-label">MOVES</span><strong id="moves">00</strong></div>
+          <div class="stat-item"><span class="stat-label">PAIRS FOUND</span><strong id="pairs-found">00 <span>/ 10</span></strong></div>
+          <div class="stat-item stat-best"><span class="stat-label">YOUR BEST</span><strong id="game-best-score">—</strong></div>
+          <button class="text-button" id="restart-game" type="button">Start over <span aria-hidden="true">↻</span></button>
+        </div>
+        <div class="game-layout">
+          <div class="board-wrap"><div class="game-board" id="game-board" aria-label="Memory matching board"></div><div class="board-hint"><span aria-hidden="true">✦</span> Find all the pairs. Meet your new favorites.</div></div>
+          <aside class="finds-panel" aria-labelledby="finds-title"><div class="finds-header"><div><div class="eyebrow">THE GOOD STUFF</div><h3 id="finds-title">Fancy Finds <span id="finds-count">0</span></h3></div><span class="finds-sparkle" aria-hidden="true">✳</span></div><p class="finds-empty" id="finds-empty">Matched brands will show up here. There’s a whole world of delicious to discover.</p><div class="finds-list" id="finds-list" aria-live="polite"></div></aside>
+        </div>
+      </section>
+
+      <section class="closing-note" aria-label="About Winter FancyFaire"><span class="closing-star" aria-hidden="true">✳</span><p>Discover the <em>extraordinary</em> in every aisle.</p><span class="closing-caption">WINTER FANCYFAIRE · THE PLACE FOR WHAT’S NEXT</span></section>
+    </main>
+
+    <footer class="site-footer"><a class="footer-brand" href="#home">WINTER FANCYFAIRE <span>✳</span></a><span>A celebration of what’s next in specialty food.</span><span class="footer-year">MADE FOR THE FANCY CURIOUS</span></footer>
+  </div>
+
+  <dialog class="info-dialog" id="how-dialog" aria-labelledby="how-title">
+    <button class="dialog-close" type="button" aria-label="Close" data-close-dialog>×</button><div class="eyebrow">A QUICK LITTLE HOW-TO</div><h2 id="how-title">Ready, set, <em>match.</em></h2>
+    <ol class="how-steps"><li><span>01</span><div><strong>Pick a pair</strong><p>Tap any two cards to flip them over and reveal a brand.</p></div></li><li><span>02</span><div><strong>Make a match</strong><p>Remember what you’ve seen. Matching brands stay face up.</p></div></li><li><span>03</span><div><strong>Meet a Fancy Find</strong><p>Every match introduces a maker worth knowing. Find them all to finish.</p></div></li></ol>
+    <button class="button button-primary dialog-play" type="button" data-close-dialog>Sounds good <span aria-hidden="true">→</span></button>
+  </dialog>
+  <dialog class="info-dialog leaderboard-dialog" id="leaderboard-dialog" aria-labelledby="leaderboard-title">
+    <button class="dialog-close" type="button" aria-label="Close" data-close-dialog>×</button><div class="eyebrow">YOUR PERSONAL HALL OF FAME</div><h2 id="leaderboard-title">Best <em>finds.</em></h2><p class="dialog-intro">Your best scores, saved on this device.</p><div class="leaderboard-list" id="leaderboard-list"></div><button class="button button-primary dialog-play" type="button" data-close-dialog>Keep playing <span aria-hidden="true">→</span></button>
+  </dialog>
+  <dialog class="info-dialog complete-dialog" id="complete-dialog" aria-labelledby="complete-title">
+    <button class="dialog-close" type="button" aria-label="Close" data-close-dialog>×</button><div class="complete-sparkles" aria-hidden="true">✦ ✳ ✦</div><div class="eyebrow">A FANCY FINE FINISH</div><h2 id="complete-title">You found them <em>all.</em></h2><p class="dialog-intro">A perfect little winter adventure. Here’s how you did:</p><div class="completion-score" id="completion-score"></div><button class="button button-primary dialog-play" id="play-again" type="button">Play again <span aria-hidden="true">→</span></button><button class="button button-quiet completion-home" id="completion-home" type="button">Back to FancyFaire</button>
+  </dialog>
+</body>
+</html>

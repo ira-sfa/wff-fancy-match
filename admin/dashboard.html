@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#211934">
+  <title>Fancy Match | Activation Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+  <script defer src="../data/exhibitors.js"></script>
+  <script defer src="../js/analytics.js"></script>
+  <script defer src="dashboard.js"></script>
+</head>
+<body>
+  <div class="dashboard-shell">
+    <header class="dashboard-header">
+      <a class="dash-brand" href="../index.html"><span class="dash-monogram">F</span><span><strong>Winter FancyFaire</strong><small>ACTIVATION DASHBOARD</small></span></a>
+      <div class="header-right"><span class="demo-badge"><i></i> DEMO DATA + THIS DEVICE</span><a href="../index.html">Return to game ↗</a></div>
+    </header>
+    <main class="dashboard-main">
+      <div class="dashboard-title"><div><div class="eyebrow">FANCY FIVE · GAME ANALYTICS</div><h1>Winter Fancy Match <em>dashboard</em></h1><p>Activation performance, exhibitor discovery, and daily engagement.</p></div><div class="dashboard-date" id="date-range"></div></div>
+      <section class="kpi-grid" id="kpi-grid" aria-label="Key performance indicators"></section>
+      <section class="dashboard-grid">
+        <article class="panel plays-panel"><div class="panel-heading"><div><h2>Plays by day</h2><p>Started games · last 14 days</p></div><span class="panel-glyph">↗</span></div><div class="plays-chart" id="plays-chart"></div></article>
+        <article class="panel clicks-panel"><div class="panel-heading"><div><h2>Top clicked exhibitors</h2><p>Learn more clicks</p></div><span class="panel-glyph">✳</span></div><div class="bar-chart" id="clicks-chart"></div></article>
+        <article class="panel sponsors-panel"><div class="panel-heading"><div><h2>Most viewed sponsors</h2><p>Matched brand reveals</p></div><span class="panel-glyph">✦</span></div><div class="bar-chart" id="sponsors-chart"></div></article>
+        <article class="panel performance-panel"><div class="panel-heading"><div><h2>Exhibitor performance</h2><p>Brand discovery and profile interest</p></div><span class="small-note">ALL BRANDS</span></div><div class="table-scroll"><table><thead><tr><th>EXHIBITOR</th><th>SPONSOR</th><th>VIEWS</th><th>CLICKS</th><th>CLICK RATE</th></tr></thead><tbody id="performance-body"></tbody></table></div></article>
+        <article class="panel activity-panel"><div class="panel-heading"><div><h2>Daily activity</h2><p>Engagement by play date</p></div><span class="small-note">LAST 14 DAYS</span></div><div class="table-scroll"><table><thead><tr><th>DATE</th><th>PLAYS</th><th>COMPLETED</th><th>COMPLETION RATE</th></tr></thead><tbody id="activity-body"></tbody></table></div></article>
+      </section>
+      <p class="dashboard-footnote">Demo metrics are generated locally for preview. Live events are stored only in this browser’s local storage; no data is sent to a server.</p>
+    </main>
+  </div>
+</body>
+</html>

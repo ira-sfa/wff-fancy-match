@@ -114,7 +114,7 @@ h1 em, h2 em { color: #65498a; font-weight: 600; }
 .mode-card.is-selected::after { position: absolute; top: 13px; right: 13px; width: 7px; height: 7px; border-radius: 50%; background: #735a91; content: ""; }
 .mode-number { color: #93879e; font-size: 8px; font-weight: 700; letter-spacing: .18em; }
 .mode-name { align-self: center; padding-top: 10px; font-family: var(--serif); font-size: 21px; }
-.mode-detail { display: flex; justify-content: space-between; align-self: end; color: #776d82; font-size: 10px; }
+.mode-detail { display: flex; justify-content: space-between; align-self: end; color: #776d82; font-size: 9px; }
 .mode-detail span { color: #a297ac; }
 .section-action-row { display: flex; align-items: center; gap: 18px; margin-top: 21px; }
 .best-score-note { color: #81778d; font-size: 10px; }
@@ -142,18 +142,21 @@ h1 em, h2 em { color: #65498a; font-weight: 600; }
 .text-button span { margin-left: 7px; font-size: 15px; }
 .game-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, 280px); align-items: start; gap: 23px; }
 .board-wrap { min-width: 0; }
-.game-board { display: grid; grid-template-columns: repeat(var(--board-columns, 5), minmax(0, 1fr)); gap: clamp(6px, 1.15vw, 13px); perspective: 1000px; }
-.memory-card { position: relative; width: 100%; aspect-ratio: 1.18 / 1; padding: 0; border: 0; border-radius: 4px; background: transparent; cursor: pointer; perspective: 800px; }
+.game-board { display: grid; grid-template-columns: repeat(var(--board-columns, 4), minmax(0, 1fr)); gap: clamp(6px, 1.15vw, 13px); perspective: 1000px; }
+.memory-card { position: relative; width: 100%; aspect-ratio: 1 / 1; padding: 0; border: 0; border-radius: 4px; background: transparent; cursor: pointer; perspective: 800px; }
 .card-inner { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform .47s cubic-bezier(.2,.8,.22,1); }
 .memory-card.is-flipped .card-inner, .memory-card.is-matched .card-inner { transform: rotateY(180deg); }
 .card-face { position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden; border: 1px solid #e1dce7; border-radius: 4px; backface-visibility: hidden; }
-.card-front { transform: rotateY(180deg); background: #282438; }
-.card-front img { width: 100%; height: 100%; object-fit: cover; }
+.card-front { transform: rotateY(180deg); background: #f7f6f2; }
+.card-front img { width: 100%; height: 100%; padding: 3%; border-radius: 4px; background: #f7f6f2; object-fit: contain; }
 .card-back { background: linear-gradient(142deg, #44335e, #5d4776); color: #e3d9ed; }
 .card-back::before, .card-back::after { position: absolute; width: 68%; height: 68%; border: 1px solid rgba(241,235,247,.16); border-radius: 50%; content: ""; }
 .card-back::after { width: 47%; height: 47%; }
 .card-back-logo { position: relative; z-index: 1; display: block; width: 72%; height: auto; object-fit: contain; }
 .card-back-snow { position: absolute; z-index: 1; right: 12%; bottom: 10%; color: #c7b7dc; font-size: 9px; }
+.board-spacer { position: relative; display: grid; width: 100%; aspect-ratio: 1; place-items: center; overflow: hidden; border: 1px dashed #dcd5e4; border-radius: 4px; background: rgba(255,255,255,.54); }
+.spacer-ring { position: absolute; width: 58%; height: 58%; border: 1px solid #e9e4ed; border-radius: 50%; }
+.spacer-mark { position: relative; color: #d5ccde; font-size: clamp(15px, 3vw, 24px); }
 .memory-card.is-matched .card-face { border-color: #9bbcae; box-shadow: 0 0 0 2px rgba(123,170,148,.27); }
 .memory-card.is-matched { animation: match-pop .42s ease; }
 .memory-card.is-mismatch .card-inner { transform: rotateY(180deg) translateY(-2px); animation: mismatch .18s ease-in-out 3; }
@@ -171,7 +174,7 @@ h1 em, h2 em { color: #65498a; font-weight: 600; }
 .finds-list { display: grid; gap: 12px; margin-top: 15px; }
 .find-card { padding-top: 13px; border-top: 1px solid #eeeaf0; animation: find-in .35s ease; }
 @keyframes find-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-.find-logo { display: block; width: 100%; height: 112px; border: 1px solid #f0edf2; background: #282438; object-fit: cover; }
+.find-logo { display: block; width: 100%; height: 112px; border: 1px solid #f0edf2; background: #f7f6f2; object-fit: contain; }
 .find-details h4 { margin: 9px 0 4px; font-family: var(--serif); font-size: 15px; font-weight: 600; }
 .find-details p { margin: 0; color: #887f90; font-size: 8px; line-height: 1.6; }
 .find-details .find-product { margin: 0 0 4px; color: #5e536b; font-size: 9px; font-weight: 600; }
@@ -253,7 +256,7 @@ h1 em, h2 em { color: #65498a; font-weight: 600; }
   .mode-number { font-size: 7px; letter-spacing: .12em; }
   .mode-name { font-size: 16px; }
   .mode-detail { gap: 2px; font-size: 8px; }
-  .mode-detail span { font-size: 7px; }
+  .mode-detail span { font-size: 6px; }
   .mode-card.is-selected::after { top: 9px; right: 8px; }
   .game-screen { padding: 23px 16px 54px; }
   .game-heading { align-items: start; flex-direction: column; gap: 9px; margin: 27px 0 16px; }
@@ -268,8 +271,8 @@ h1 em, h2 em { color: #65498a; font-weight: 600; }
   .text-button span { margin-left: 2px; }
   .game-layout { grid-template-columns: 1fr; gap: 22px; }
   .game-board { gap: 6px; }
-  .memory-card { aspect-ratio: 1.08 / 1; }
-  .card-front img { width: 100%; height: 100%; object-fit: cover; }
+  .memory-card { aspect-ratio: 1 / 1; }
+  .card-front img { width: 100%; height: 100%; object-fit: contain; }
   .card-back-snow { font-size: 7px; }
   .finds-panel { min-height: 0; padding: 16px; }
   .finds-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }

@@ -26,7 +26,7 @@
         var playerNumber = 1 + Math.floor(random() * 31);
         var playerId = "demo-player-" + String(playerNumber).padStart(2, "0");
         var mode = ["easy", "medium", "hard"][Math.floor(random() * 3)];
-        var pairCount = mode === "easy" ? 8 : mode === "medium" ? 10 : 18;
+        var pairCount = mode === "easy" ? 4 : mode === "medium" ? 8 : 12;
         var startedAt = new Date(date);
         startedAt.setHours(9 + Math.floor(random() * 10), Math.floor(random() * 60), Math.floor(random() * 60));
         var gameId = "demo-" + dayOffset + "-" + gameNumber;

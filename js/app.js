@@ -122,6 +122,14 @@
       button.addEventListener("click", onCardClick);
       elements.board.appendChild(button);
     });
+    var remainingCells = activeGame.settings.rows * activeGame.settings.columns - activeGame.cards.length;
+    for (var index = 0; index < remainingCells; index += 1) {
+      var snowflakeSpace = document.createElement("div");
+      snowflakeSpace.className = "board-spacer";
+      snowflakeSpace.setAttribute("aria-hidden", "true");
+      snowflakeSpace.innerHTML = '<span class="spacer-ring"></span><span class="spacer-mark">✳</span>';
+      elements.board.appendChild(snowflakeSpace);
+    }
   }
 
   function startGame(mode) {

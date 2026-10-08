@@ -10,7 +10,7 @@
 
   function ingredientArt(motif, accent, ink) {
     var base = ' stroke="' + ink + '" stroke-opacity=".25" stroke-width="2" ';
-    var center = ' transform="translate(180 246)" ';
+    var center = ' transform="translate(180 200) scale(1.9)" ';
     var art = {
       jerky: '<path d="M-57 27-49-27Q-46-39-34-31L-28-26 15-42Q29-45 30-32L54-17 47 27Q43 40 31 33L12 27-32 42Q-47 45-49 33Z" fill="#bd7951"' + base + '/><path d="M-36-18l63 35m-69-13 49 28m9-55 21 18" fill="none" stroke="#f2cf98" stroke-width="5" stroke-linecap="round"/>',
       chips: '<g transform="rotate(-12)"><ellipse cx="-29" cy="3" rx="31" ry="22" fill="#f5cb75"' + base + '/><ellipse cx="17" cy="-14" rx="29" ry="20" fill="#e9b958"' + base + '/><ellipse cx="35" cy="22" rx="30" ry="19" fill="#f1c86b"' + base + '/><path d="M-46 4q14-10 28-2m12-18q12-8 21-5m6 43q12-9 20-3" fill="none" stroke="#fff0c3" stroke-width="3" opacity=".8"/></g>',
@@ -35,55 +35,11 @@
     return '<g' + center + '>' + (art[motif] || art.citrus) + '</g>';
   }
 
-  function wrapProductName(value, maximumCharacters) {
-    var words = value.split(/\s+/);
-    var lines = [];
-    var line = "";
-    words.forEach(function (word) {
-      var nextLine = line ? line + " " + word : word;
-      if (line && nextLine.length > maximumCharacters && lines.length < 2) {
-        lines.push(line);
-        line = word;
-      } else {
-        line = nextLine;
-      }
-    });
-    if (line) lines.push(line);
-    return lines.slice(0, 3);
-  }
-
-  function packageShape(format) {
-    if (format === "jar" || format === "honey") {
-      return '<ellipse cx="180" cy="100" rx="79" ry="13" fill="#fff" fill-opacity=".62"/><path d="M104 103Q106 90 126 90H234Q254 90 256 103L249 301Q249 326 228 334H132Q111 326 111 301Z" fill="url(#pack)" stroke="#fff" stroke-opacity=".4" stroke-width="2"/><path d="M108 108Q180 125 252 108M113 303Q180 320 247 303" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="4"/><rect x="116" y="69" width="128" height="37" rx="7" fill="url(#cap)"/><path d="M120 84h120" stroke="#fff" stroke-opacity=".3" stroke-width="3"/>';
-    }
-    if (format === "bottle") {
-      return '<path d="M162 55Q164 48 164 37V23Q164 18 171 18H189Q196 18 196 23V37Q196 48 198 55L223 74Q239 84 240 106V301Q240 323 218 331H142Q120 323 120 301V106Q121 84 137 74Z" fill="url(#pack)" stroke="#fff" stroke-opacity=".44" stroke-width="2"/><path d="M161 53H199M126 295Q180 311 234 295" fill="none" stroke="#fff" stroke-opacity=".36" stroke-width="4"/><rect x="157" y="5" width="46" height="30" rx="7" fill="url(#cap)"/><path d="M160 14h40m-40 9h40" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>';
-    }
-    if (format === "can") {
-      return '<ellipse cx="180" cy="83" rx="72" ry="14" fill="#e8e4dd" stroke="#fff" stroke-opacity=".55" stroke-width="2"/><path d="M108 83H252V316Q180 333 108 316Z" fill="url(#pack)" stroke="#fff" stroke-opacity=".45" stroke-width="2"/><ellipse cx="180" cy="316" rx="72" ry="15" fill="#a9a4a0" stroke="#fff" stroke-opacity=".4" stroke-width="2"/><path d="M116 93V304m128-211V304" stroke="#fff" stroke-opacity=".15" stroke-width="5"/><ellipse cx="180" cy="81" rx="49" ry="7" fill="#b5b0a9"/>';
-    }
-    if (format === "box") {
-      return '<path d="M108 67 180 42l72 25v252l-72 30-72-30Z" fill="url(#pack)" stroke="#fff" stroke-opacity=".42" stroke-width="2"/><path d="m108 67 72 27 72-27M180 94v255" fill="none" stroke="#fff" stroke-opacity=".43" stroke-width="3"/><path d="m129 63 52 20 51-19" fill="none" stroke="#fff" stroke-opacity=".2" stroke-width="3"/>';
-    }
-    if (format === "tub") {
-      return '<ellipse cx="180" cy="107" rx="83" ry="21" fill="#fff" fill-opacity=".7"/><path d="M100 107H260L242 306Q180 330 118 306Z" fill="url(#pack)" stroke="#fff" stroke-opacity=".48" stroke-width="2"/><ellipse cx="180" cy="303" rx="63" ry="15" fill="#000" fill-opacity=".07"/><rect x="97" y="79" width="166" height="32" rx="8" fill="url(#cap)"/><path d="M106 89h148m-143 13h138" stroke="#fff" stroke-opacity=".4" stroke-width="2"/>';
-    }
-    return '<path d="m112 45 18 9h100l18-9v16h8v247l-11 45q-65 17-130 0l-11-45V61h8Z" fill="url(#pack)" stroke="#fff" stroke-opacity=".48" stroke-width="2"/><path d="M120 62h120m-120 8h120m-112 266q52 12 104 0" fill="none" stroke="#fff" stroke-opacity=".52" stroke-width="3"/><path d="M120 91h120" stroke="#000" stroke-opacity=".12" stroke-width="4"/>';
-  }
-
   function makeProductImage(item) {
     if (item.photo) return item.photo;
     var colors = item.palette;
-    var logoName = escapeXml(item.brand.toUpperCase());
-    var productName = wrapProductName(item.productName, 17);
-    var lines = productName.map(function (line, index) {
-      var firstY = 176 - ((productName.length - 1) * 11);
-      return '<text x="180" y="' + (firstY + index * 25) + '" text-anchor="middle" fill="#31273b" font-family="Georgia,serif" font-size="19" font-weight="700">' + escapeXml(line) + '</text>';
-    }).join("");
-    var productTag = escapeXml(item.tagline.toUpperCase());
-    var formatArt = packageShape(item.format);
     var ingredients = ingredientArt(item.motif, colors[1], colors[2]);
-    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 400"><defs><linearGradient id="scene" x1="0" y1="0" x2="1" y2="1"><stop stop-color="' + colors[2] + '"/><stop offset=".52" stop-color="' + colors[1] + '"/><stop offset="1" stop-color="' + colors[2] + '"/></linearGradient><radialGradient id="glow"><stop stop-color="' + colors[1] + '" stop-opacity=".9"/><stop offset="1" stop-color="' + colors[2] + '" stop-opacity="0"/></radialGradient><linearGradient id="pack" x1="0" y1="0" x2="1" y2=".45"><stop stop-color="' + colors[0] + '"/><stop offset=".48" stop-color="' + colors[1] + '"/><stop offset="1" stop-color="' + colors[0] + '"/></linearGradient><linearGradient id="cap" x1="0" y1="0" x2="0" y2="1"><stop stop-color="' + colors[0] + '"/><stop offset=".5" stop-color="' + colors[1] + '"/><stop offset="1" stop-color="' + colors[2] + '"/></linearGradient><filter id="shadow" x="-.6" y="-.3" width="2.2" height="2"><feGaussianBlur stdDeviation="12"/></filter></defs><rect width="360" height="400" fill="url(#scene)"/><ellipse cx="180" cy="173" rx="154" ry="179" fill="url(#glow)"/><path d="M0 339q94-25 180-14t180 5v70H0Z" fill="#151a20" fill-opacity=".3"/><ellipse cx="180" cy="340" rx="113" ry="19" fill="#111219" fill-opacity=".47" filter="url(#shadow)"/><ellipse cx="180" cy="340" rx="91" ry="12" fill="#10131b" fill-opacity=".32"/><g>' + formatArt + '<rect x="117" y="129" width="126" height="150" rx="4" fill="#faf5e9"/><path d="M125 137h110v134H125Z" fill="none" stroke="' + colors[1] + '" stroke-width="1.5"/><path d="M130 143h100" stroke="' + colors[1] + '" stroke-opacity=".6"/><text x="180" y="159" text-anchor="middle" fill="' + colors[0] + '" font-family="Arial,sans-serif" font-size="8" font-weight="700" letter-spacing="1">' + logoName + '</text>' + lines + ingredients + '<path d="M139 301h82" stroke="' + colors[1] + '" stroke-width="1"/><text x="180" y="295" text-anchor="middle" fill="' + colors[0] + '" font-family="Arial,sans-serif" font-size="7" font-weight="700" letter-spacing=".8">' + productTag + '</text><circle cx="180" cy="316" r="10" fill="' + colors[1] + '"/><path d="m176 316 3 3 6-7" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M119 111q9-30 18-38m101 0q9 15 13 38" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="3" stroke-linecap="round"/></g><circle cx="40" cy="91" r="1.7" fill="#fff" fill-opacity=".48"/><circle cx="310" cy="137" r="1.3" fill="#fff" fill-opacity=".52"/><circle cx="290" cy="53" r="2" fill="#fff" fill-opacity=".38"/><circle cx="69" cy="261" r="1.5" fill="#fff" fill-opacity=".42"/></svg>';
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 400"><rect width="360" height="400" fill="#f7f6f2"/><ellipse cx="180" cy="317" rx="72" ry="8" fill="#241d33" fill-opacity=".09"/>' + ingredients + '</svg>';
     return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
   }
 

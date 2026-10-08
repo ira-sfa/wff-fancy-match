@@ -1,8 +1,8 @@
 (function () {
   var MODES = {
-    easy: { label: "Easy", columns: 4, rows: 4, pairs: 8 },
-    medium: { label: "Medium", columns: 5, rows: 4, pairs: 10 },
-    hard: { label: "Hard", columns: 6, rows: 6, pairs: 18 }
+    easy: { label: "Easy", columns: 3, rows: 3, pairs: 4 },
+    medium: { label: "Medium", columns: 4, rows: 4, pairs: 8 },
+    hard: { label: "Hard", columns: 5, rows: 5, pairs: 12 }
   };
 
   function shuffle(items) {

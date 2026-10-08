@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=3">
-  <script defer src="data/exhibitors.js?v=3"></script>
+  <link rel="stylesheet" href="css/styles.css?v=4">
+  <script defer src="data/exhibitors.js?v=4"></script>
   <script defer src="js/analytics.js"></script>
-  <script defer src="js/game.js"></script>
-  <script defer src="js/app.js?v=3"></script>
+  <script defer src="js/game.js?v=4"></script>
+  <script defer src="js/app.js?v=4"></script>
 </head>
 <body>
   <div class="site-shell">
@@ -61,13 +61,13 @@
         </div>
         <div class="mode-picker" role="group" aria-label="Choose a difficulty">
           <button class="mode-card" type="button" data-mode="easy" aria-pressed="false">
-            <span class="mode-number">01 / EASY</span><span class="mode-name">A little chill</span><span class="mode-detail">4 × 4 <span>8 pairs</span></span>
+            <span class="mode-number">01 / EASY</span><span class="mode-name">A little chill</span><span class="mode-detail">3 × 3 <span>4 pairs · quick play</span></span>
           </button>
           <button class="mode-card is-selected" type="button" data-mode="medium" aria-pressed="true">
-            <span class="mode-number">02 / MEDIUM</span><span class="mode-name">Just right</span><span class="mode-detail">5 × 4 <span>10 pairs</span></span>
+            <span class="mode-number">02 / MEDIUM</span><span class="mode-name">Just right</span><span class="mode-detail">4 × 4 <span>8 pairs · just right</span></span>
           </button>
           <button class="mode-card" type="button" data-mode="hard" aria-pressed="false">
-            <span class="mode-number">03 / HARD</span><span class="mode-name">Bring the heat</span><span class="mode-detail">6 × 6 <span>18 pairs</span></span>
+            <span class="mode-number">03 / HARD</span><span class="mode-name">Bring the heat</span><span class="mode-detail">5 × 5 <span>12 pairs · go all in</span></span>
           </button>
         </div>
         <div class="section-action-row">
@@ -82,7 +82,7 @@
         <div class="game-stats" aria-label="Game stats">
           <div class="stat-item"><span class="stat-label">TIME</span><strong id="timer">00:00</strong></div>
           <div class="stat-item"><span class="stat-label">MOVES</span><strong id="moves">00</strong></div>
-          <div class="stat-item"><span class="stat-label">PAIRS FOUND</span><strong id="pairs-found">00 <span>/ 10</span></strong></div>
+          <div class="stat-item"><span class="stat-label">PAIRS FOUND</span><strong id="pairs-found">00 <span>/ 8</span></strong></div>
           <div class="stat-item stat-best"><span class="stat-label">YOUR BEST</span><strong id="game-best-score">—</strong></div>
           <button class="text-button" id="restart-game" type="button">Start over <span aria-hidden="true">↻</span></button>
         </div>

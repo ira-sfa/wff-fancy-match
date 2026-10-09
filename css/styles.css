@@ -154,9 +154,11 @@ h1 em, h2 em { color: #65498a; font-weight: 600; }
 .card-back::after { width: 47%; height: 47%; }
 .card-back-logo { position: relative; z-index: 1; display: block; width: 72%; height: auto; object-fit: contain; }
 .card-back-snow { position: absolute; z-index: 1; right: 12%; bottom: 10%; color: #c7b7dc; font-size: 9px; }
-.board-spacer { position: relative; display: grid; width: 100%; aspect-ratio: 1; place-items: center; overflow: hidden; border: 1px dashed #dcd5e4; border-radius: 4px; background: rgba(255,255,255,.54); }
-.spacer-ring { position: absolute; width: 58%; height: 58%; border: 1px solid #e9e4ed; border-radius: 50%; }
-.spacer-mark { position: relative; color: #d5ccde; font-size: clamp(15px, 3vw, 24px); }
+.board-spacer { position: relative; display: grid; width: 100%; aspect-ratio: 1; place-items: center; overflow: hidden; border: 1px solid #d9d0e3; border-radius: 4px; background: linear-gradient(145deg, #f5f1f8, #e9e3f1); }
+.spacer-ring { position: absolute; width: 68%; height: 68%; border: 1px solid #dcd3e5; border-radius: 50%; }
+.spacer-content { position: relative; display: grid; justify-items: center; gap: 6px; }
+.spacer-mark { color: #80679a; font-size: clamp(18px, 3vw, 28px); line-height: 1; }
+.spacer-label { color: #78668c; font-size: clamp(6px, .75vw, 8px); font-weight: 700; letter-spacing: .13em; white-space: nowrap; }
 .memory-card.is-matched .card-face { border-color: #9bbcae; box-shadow: 0 0 0 2px rgba(123,170,148,.27); }
 .memory-card.is-matched { animation: match-pop .42s ease; }
 .memory-card.is-mismatch .card-inner { transform: rotateY(180deg) translateY(-2px); animation: mismatch .18s ease-in-out 3; }

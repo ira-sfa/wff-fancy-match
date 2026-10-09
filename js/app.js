@@ -127,7 +127,7 @@
       var snowflakeSpace = document.createElement("div");
       snowflakeSpace.className = "board-spacer";
       snowflakeSpace.setAttribute("aria-hidden", "true");
-      snowflakeSpace.innerHTML = '<span class="spacer-ring"></span><span class="spacer-mark">✳</span>';
+      snowflakeSpace.innerHTML = '<span class="spacer-ring"></span><span class="spacer-content"><span class="spacer-mark">✳</span><span class="spacer-label">FREE SPACE</span></span>';
       elements.board.appendChild(snowflakeSpace);
     }
   }

@@ -2,7 +2,7 @@
 
 A mobile-first, sponsor-friendly memory game created for Winter FancyFaire*. Players match specialty-food products, discover the exhibitor and booth after a match, and keep their best score on their own device. The site is plain HTML, CSS, and vanilla JavaScript; it has no build step, server, or framework and can be hosted as a static GitHub Pages site.
 
-> **Demo content:** Exhibitor names and wordmarks are fictional samples. The matching cards feature simple, original food illustrations on clean, light backgrounds and the supplied sample Galactic Granola product photograph. These are concept images, not actual exhibitor products. Replace them with approved exhibitor details and product photography before promoting a live activation.
+> **Demo content:** Exhibitor names and wordmarks are fictional samples. The matching cards feature simple, original food illustrations on clean, light backgrounds. These are concept images, not actual exhibitor products. Replace them with approved exhibitor details and product photography before promoting a live activation.
 
 ## Screenshots
 
@@ -54,11 +54,11 @@ Keep `index.html` at the repository root and retain the provided relative asset 
 4. Keep every `id` unique and stable and provide at least **12 exhibitors** so Hard mode can deal 12 different pairs. Verify each product image, company, booth, sponsor level, and profile URL.
 5. Play each difficulty. Check that the product packaging is recognizable at card size, each match reveals the correct exhibitor and booth, and Learn More opens the correct profile. Review the dashboard, then commit the approved assets and data.
 
-The supplied Reti Yeti waving artwork is included at `assets/brand/reti-yeti-waving.png` and displayed on the welcome screen. The approved white Specialty Food Association wordmark from the supplied artwork is at `assets/brand/sfa-logo-white.png`; it is shown unaltered against the game's dark background in the header, dashboard, and card backs. The supplied Galactic Granola image is included at `assets/products/galactic-granola-clusters.png`. Other product illustrations are original concept art, not actual exhibitor products; the illustrations omit package text so the distinct food motifs remain legible at small card sizes. Product categories take inspiration from the variety on the [2026 Summer Fancy Food Show products page](https://events.specialtyfood.com/event/2026-summer-fancy-food-show/products/RXZlbnRWaWV3XzEyNTgzMTU=); its exhibitors' photographs are not reused. Add approved company marks under `assets/logos/` and product photos under `assets/products/`.
+The supplied Reti Yeti waving artwork is included at `assets/brand/reti-yeti-waving.png` and displayed on the welcome screen. The approved white Specialty Food Association wordmark from the supplied artwork is at `assets/brand/sfa-logo-white.png`; it is shown unaltered against the game's dark background in the header, dashboard, and card backs. Product illustrations are original concept art, not actual exhibitor products; the illustrations omit package text so the distinct food motifs remain legible at small card sizes. Product categories take inspiration from the variety on the [2026 Summer Fancy Food Show products page](https://events.specialtyfood.com/event/2026-summer-fancy-food-show/products/RXZlbnRWaWV3XzEyNTgzMTU=); its exhibitors' photographs are not reused. Add approved company marks under `assets/logos/` and product photos under `assets/products/`.
 
 ## Gameplay and stored data
 
-- **Easy:** 3 × 3 grid, 4 pairs. **Medium:** 4 × 4 grid, 8 pairs. **Hard:** 5 × 5 grid, 12 pairs. To keep each square board, an odd-size mode has one decorative, non-interactive snowflake tile.
+- **Easy:** 3 × 3 grid, 4 pairs. **Medium:** 4 × 4 grid, 8 pairs. **Hard:** 5 × 5 grid, 12 pairs. The 3 × 3 and 5 × 5 boards show a clearly labeled, non-interactive free-space tile; it is not a missing card and does not count as a pair.
 - Cards feature a specialty-food product. Matching it reveals its demo exhibitor, featured product, booth, category, sponsor level, and profile link.
 - Best score, sound preference, a random local player ID, visit status, and event records are held in local storage in the visitor's browser.
 - The game records `first_visit`, `returning_visit`, `game_started`, `card_flipped`, `match_found`, `game_completed`, and `exhibitor_clicked` events. Nothing is sent to an analytics server.

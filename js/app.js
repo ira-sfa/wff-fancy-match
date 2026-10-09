@@ -1,6 +1,7 @@
 (function () {
   var BEST_KEY = "wff-fancy-match-best";
   var SOUND_KEY = "wff-fancy-match-sound";
+  var EVENT_MAP_URL = "https://events.specialtyfood.com/event/winter-fancyfaire-2027/maps/RXZlbnRWaWV3XzE1NzYyNTI=";
   var selectedMode = "medium";
   var activeGame = null;
   var soundEnabled = false;
@@ -243,7 +244,12 @@
     var product = document.createElement("p");
     product.className = "find-product";
     product.textContent = exhibitor.productName;
-    var metadata = document.createElement("p");
+    var metadata = document.createElement("a");
+    metadata.className = "find-map-link";
+    metadata.href = EVENT_MAP_URL;
+    metadata.target = "_blank";
+    metadata.rel = "noopener noreferrer";
+    metadata.setAttribute("aria-label", "Booth " + exhibitor.boothNumber + " and " + exhibitor.category + " — view event map, opens in a new tab");
     metadata.textContent = "BOOTH " + exhibitor.boothNumber + " · " + exhibitor.category;
     var sponsor = document.createElement("span");
     sponsor.className = "sponsor-pill";
